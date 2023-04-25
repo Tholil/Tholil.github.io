@@ -15,9 +15,24 @@
         .main-right{
             display:block;
             width:30vw;
-            height:500px;
+            height:300px;
             margin:20px;
-            background-color:red;
+            padding:15px;
+            color:#852e2e;
+            border:3px solid #681717;
+            border-radius:30px;
+            background-color:#ffefef;
+            margin-top:70px;
+        }
+        .role-basic-info tr td{
+            font-size:14px;
+        }
+        .role-basic-info tr td{
+            border-bottom:1px solid rgb(163, 79, 79);
+        }
+        .role-basic-info tr td:nth-child(1){
+            padding-right:20px;
+            color:#1d3a91;
         }
         .main-left{
             margin:20px;
@@ -98,13 +113,12 @@
             color:white;
             background:none;
             border:none;
-            padding:10px;
+            padding:0px;
         }
         .c-img-link{
             background-color: white;
             padding:20px;
             width:300px;
-            overflow-x: hidden;
         }
         .c-time{
             font-size:14px;
@@ -117,8 +131,9 @@
         }
         .c-img-link{
             text-decoration: none;
+            margin:5px;
         }
-        .tag{
+        .tag, .p-tag{
             display:block;
             text-decoration:none;
             font-size:12px;
@@ -129,12 +144,14 @@
             margin:4px;
             color:#da5757;
         }
-        .course-tag{
+        .course-tag, .p-tags{
             display:flex;
             margin-top:4px;
         }
         .free-course-list{
             display:flex;
+            white-space: nowrap;
+            overflow-x: scroll;
         }
         .c-img{
             width:250px;
@@ -154,6 +171,111 @@
         .c-from{
             color:#1d3a91;
             font-size:12px;
+        }
+        /* Project */
+        .cource-project{
+            display:flex;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+        .project{
+            background-color:white;
+            box-sizing: border-box;
+            margin:5px;
+            width:300px !important;
+            height:300px;
+            padding:10px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            white-space: pre-wrap;
+        }
+        .project:hover{
+            background-color:#ffdada;
+        }
+        .p-title{
+            text-align: center;
+            display:block;
+            font-size:17px;
+            color:#852e2e;
+            margin-bottom:10px;
+        }
+        .p-link{
+            text-decoration: none;
+            text-align: center;
+            margin:5px;
+            font-size:13px;
+            color:#1d3a91;
+            width:200px !important;
+        }
+        .c-projects{
+            color:white;
+            font-size:14px;
+            margin:10px 0;
+        }
+        .otherInTop{
+            display:block;
+        }
+        .otherLink{
+            display:block;
+            font-size:12px;
+            text-decoration: none;
+            color:wheat;
+        }
+        .OtherLinks{
+            font-size:14px;
+            color:white;
+            padding:10px 0;
+        }
+        .otherTtitle{
+            color:white;
+            font-size:14px;
+        }
+        /* Youtube Channel */
+        .topic-youtubeContainer{
+            display:flex;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+
+        .youtubechannels{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:300px;
+            padding:10px;
+            background-color:#ffefef;
+            margin:5px;
+            border:2px solid #9f4747;
+            border-radius:10px;
+            white-space: pre-wrap;
+        }
+        .youtubeChannel{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            margin-right:15px;
+        }
+        .youtubeChannelName{
+            font-size:14px;
+            text-decoration: none;
+            color:#852e2e;
+        }
+        .topic-youtube-title{
+            font-size:14px;
+            color:white;
+            padding:10px 0 3px 0;
+        }
+        .topic_body{
+            display:none;
+        }
+        #topicarrow{
+            transform:rotate(180deg);
+        }
+        .main-right{
+            padding:15px;
+            background-color: none;
         }
     </style>
 </head>
@@ -279,9 +401,9 @@
             <div class="topics-ntc">
                 <div class="topic1 topic">
                     <div class="topic_head topic1_head">
-                        <button class="topic1_expand topic_expand" id="topic1_expand"><span class="material-symbols-outlined">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
                     </div>
-                    <div class="topic_body topic1_body">
+                    <div class="topic_body topic1_body" id="topic_body">
                         <p class="topic-free-courses">Course:</p>
                         <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
                             <div class="free-course-list">
@@ -328,8 +450,827 @@
                                     </div>
                                 </a>
                             </div>
+                            <p class="c-projects">Projects:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
+                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
+                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
+                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
+                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Multivibrator</p>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Counter and Timer Projects</p>
+                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
+                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Op-Amps and Oscillators</p>
+                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
+                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
+                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
+                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text and video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                                <div class="otherInTop other1">
+                                    <p class="otherTtitle">Interview Questions</p>
+                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
+                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
+                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                </div>
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                 </div>
+                <script>
+                    function topic1exapnd(){
+                        var text=document.getElementById("topic_body");
+                        var btn=document.getElementById("topicarrow");
+    
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script>
+                <div class="topic1 topic">
+                    <div class="topic_head topic1_head">
+                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                    </div>
+                    <div class="topic_body topic1_body" id="topic_body">
+                        <p class="topic-free-courses">Course:</p>
+                        <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
+                            <div class="free-course-list">
+                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic Electronics</p>
+                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="c-projects">Projects:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
+                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
+                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
+                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
+                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Multivibrator</p>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Counter and Timer Projects</p>
+                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
+                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Op-Amps and Oscillators</p>
+                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
+                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
+                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
+                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text and video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                                <div class="otherInTop other1">
+                                    <p class="otherTtitle">Interview Questions</p>
+                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
+                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
+                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                </div>
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <script>
+                    function topic1exapnd(){
+                        var text=document.getElementById("topic_body");
+                        var btn=document.getElementById("topicarrow");
+    
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script><div class="topic1 topic">
+                    <div class="topic_head topic1_head">
+                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                    </div>
+                    <div class="topic_body topic1_body" id="topic_body">
+                        <p class="topic-free-courses">Course:</p>
+                        <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
+                            <div class="free-course-list">
+                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic Electronics</p>
+                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="c-projects">Projects:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
+                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
+                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
+                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
+                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Multivibrator</p>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Counter and Timer Projects</p>
+                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
+                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Op-Amps and Oscillators</p>
+                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
+                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
+                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
+                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text and video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                                <div class="otherInTop other1">
+                                    <p class="otherTtitle">Interview Questions</p>
+                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
+                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
+                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                </div>
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <script>
+                    function topic1exapnd(){
+                        var text=document.getElementById("topic_body");
+                        var btn=document.getElementById("topicarrow");
+    
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script><div class="topic1 topic">
+                    <div class="topic_head topic1_head">
+                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                    </div>
+                    <div class="topic_body topic1_body" id="topic_body">
+                        <p class="topic-free-courses">Course:</p>
+                        <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
+                            <div class="free-course-list">
+                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic Electronics</p>
+                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="c-projects">Projects:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
+                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
+                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
+                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
+                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Multivibrator</p>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Counter and Timer Projects</p>
+                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
+                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Op-Amps and Oscillators</p>
+                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
+                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
+                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
+                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text and video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                                <div class="otherInTop other1">
+                                    <p class="otherTtitle">Interview Questions</p>
+                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
+                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
+                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                </div>
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <script>
+                    function topic1exapnd(){
+                        var text=document.getElementById("topic_body");
+                        var btn=document.getElementById("topicarrow");
+    
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script><div class="topic1 topic">
+                    <div class="topic_head topic1_head">
+                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                    </div>
+                    <div class="topic_body topic1_body" id="topic_body">
+                        <p class="topic-free-courses">Course:</p>
+                        <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
+                            <div class="free-course-list">
+                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic Electronics</p>
+                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Electronics</p>
+                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="c-projects">Projects:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
+                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
+                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
+                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
+                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Multivibrator</p>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
+                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Counter and Timer Projects</p>
+                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
+                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Op-Amps and Oscillators</p>
+                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
+                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
+                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
+                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text and video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                                <div class="otherInTop other1">
+                                    <p class="otherTtitle">Interview Questions</p>
+                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
+                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
+                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                </div>
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <script>
+                    function topic1exapnd(){
+                        var text=document.getElementById("topic_body");
+                        var btn=document.getElementById("topicarrow");
+    
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script>
             </div>
         </div>
         <!-- Main Right -->
