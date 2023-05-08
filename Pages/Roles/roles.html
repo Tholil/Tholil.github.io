@@ -20,45 +20,65 @@
             color:#43599e;
             margin:20px auto;
         }
-        .company{
-            display:flex;
-            flex-direction: column;
-            height:200px;
-            justify-content:center;
-            background-color:#758cd7;
-            width:200px;
-            padding:20px;
-            border-radius:20px;
-            color:rgb(204, 216, 242);
-            margin:12px;
-            box-shadow: 1px 1px 10px #758cd7;
+
+        /* Roles */
+        .role-img{
+            width:250px;
+            height:150px;
+            border-radius: 20px 20px ;
         }
-        .company h3{
-            font-size:16px;
-            margin-bottom: 12px;
-            color:#9f2a2a;
-            text-align:center;
-        }
-        .company p{
-            font-size:13px;
-            text-align: center;
-        }
-        .company_container{
-            display:flex;
+        .role_container{
+            display:grid;
+            grid-template-columns: auto auto auto;
             justify-content: center;
-            align-items:center;
+            align-items: center;
         }
-        .company a{
-            color:white;
-            text-decoration: none;
-            font-size:14px;
+        .role{
             width:max-content;
-            display:block;
-            text-align:center;
-            padding:5px 14px;
-            margin:10px auto;
-            background-color:#D96C6C;
-            border-radius:10px;
+            background:linear-gradient(45deg,rgb(206, 217, 249)40%,rgb(233, 242, 254) 49%,rgb(206, 217, 249)55%);
+            border-radius:20px;
+            padding: 10px 10px 20px 10px;
+            box-shadow:2px 2px 10px gray;
+            margin:20px;
+        }
+        .role-name{
+            font-size:14px;
+            color:#1d3270;
+            display: block;
+            width:max-content;
+            max-width:200px;
+            margin:auto;
+            margin-top:20px;
+        }
+        .role_container a{
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:950px){
+            .role{
+                margin:10px;
+            }
+            .role-img{
+                width:180px;
+                height:120px;
+            }
+            .role-name{
+                max-width:150px;
+                text-align:center;
+                font-size:12px;
+            }
+        }
+
+        @media screen and (max-width:700px){
+            .role_container{
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media screen and (max-width:490px) {
+            .role_container{
+                grid-template-columns: auto;
+            }
         }
     </style>
 </head>
@@ -81,13 +101,28 @@
                 <li><a href="#">Oppertunites</a></li>
                 <li><a href="#">Members</a></li>
                 <li><a href="#">Contribue</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="../Blog/blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
     <script src="../../menu.js"></script>
-    <div class="main">
-        
+    <script src="../../menu.js"></script>
+    <div class="main" id="main">
+        <h1 class="main-heading">Roles</h1>
+        <div class="Roless-container" id="Roless_container">
+            
+        </div>
+        <script src="Roles.js"></script>
+        <script>
+            var text = "";
+            for (var i in Roles){
+                text+='<a href="'+Roles[i].Link+'"><div class="role"><img class="role-img" src="'+Roles[i].Image+'"/><h3 class="role-name">'+Roles[i].r_name+'</h3></div></a>';
+            }
+            const para = document.createElement("div");
+            para.classList.add("role_container");
+            para.innerHTML=text;
+            document.getElementById("Roless_container").appendChild(para);
+        </script>
     </div>
 </body>
 </html>

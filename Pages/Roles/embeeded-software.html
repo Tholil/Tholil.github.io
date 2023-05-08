@@ -13,22 +13,58 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3274777737673574" crossorigin="anonymous"></script>
     <style>
         .main-right{
+            display:flex;
+            flex-direction: column;
+        }
+        .phone-table-role-info{
+            display:none;
+        }
+        .role-basic-info{
             display:block;
-            width:30vw;
-            height:300px;
+            width:320px;
+            height:max-content;
             margin:20px;
-            padding:15px;
             color:#852e2e;
-            border:3px solid #681717;
-            border-radius:30px;
-            background-color:#ffefef;
             margin-top:70px;
+            border-radius:24px;
+            box-shadow: 2px 2px 10px gray;
+        }
+        .role-basic-info tr td:nth-child(1)
+        {
+            background-color:#F0F0F0;
+            margin-right:0;
+            color:#852e2e !important;
+            border-right:1px solid #652525;
+            border-bottom:1px solid #652525;
+        }
+        .role-basic-info tr:nth-child(1) td:nth-child(1)
+        {
+            border-radius:20px 0 0 0;
+        }
+        .role-basic-info tr:nth-child(1) td:nth-child(2)
+        {
+            border-radius:0 20px 0 0;
+        }
+        .role-basic-info tr:last-child td:nth-child(2)
+        {
+            border-radius:0 0 20px 0;
+        }
+        
+        .role-basic-info tr:last-child td:nth-child(1)
+        {
+            border-radius:0 0 0 20px;
+        }
+        .role-basic-info tr td:nth-child(2)
+        {
+            background-color:#e16969;
+            margin-left:0;
+            color:white;
+            border-bottom:1px solid #652525;
         }
         .role-basic-info tr td{
             font-size:14px;
-        }
-        .role-basic-info tr td{
-            border-bottom:1px solid rgb(163, 79, 79);
+            padding:10px 20px;
+            margin:0 !Important;
         }
         .role-basic-info tr td:nth-child(1){
             padding-right:20px;
@@ -36,10 +72,54 @@
         }
         .main-left{
             margin:20px;
-            width:70vw;
         }
+        @media screen and (max-width:1000px)
+        {
+            .role-basic-info{
+                width:250px;
+            }
+        }
+        @media screen and (max-width:800px)
+        {
+            .role-basic-info{
+                width:150px;
+            }
+            .main-left{
+                width:55vw;
+            }
+        }
+        @media screen and (max-width:750px)
+        {
+            .main-left{
+                width:48vw;
+            }
+        }
+        @media screen and (max-width:700px)
+        {
+            .main-right{
+                display:none;
+            }
+            .main-left{
+                max-width:90vw !important;
+                width:100vw;
+            }
+            .phone-table-role-info{
+                display:flex;
+                justify-content: center;
+                width:90vw;
+            }
+            .role-basic-info{
+                margin-top:25px;
+                width:100%;
+                max-width:350px;
+            }
+        }
+
         .main{
             display:flex;
+        }
+        .main-left{
+            max-width:70vw;
         }
         .real-life-expla li{
            list-style-type:square; 
@@ -270,12 +350,60 @@
         .topic_body{
             display:none;
         }
+       .topic2_body{
+            display:none;
+        }
+        .topic3_body, .topic4_body, .topic7_body, .topic5_body, .topic6_body{
+            display:none;
+        }
         #topicarrow{
             transform:rotate(180deg);
         }
         .main-right{
             padding:15px;
             background-color: none;
+        }
+
+        /* Job Req */
+        .com-req{
+            display:flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+        .c-req{
+            width:500px;
+        }
+        #requ-c-expand{
+            display:block;
+            background-color:#1d3a91;
+            color:white;
+            border:none;
+            padding:6px 14px;
+            border-radius:5px;
+        }
+        #com-req{
+            display:none;
+        }
+        .jobdiscrip{
+            margin-top:30px;
+            color:#1d3a91;
+        }
+
+        /* scroll bar color */
+        .topic-youtubeContainer::-webkit-scrollbar, .cource-project::-webkit-scrollbar, .free-course-list::-webkit-scrollbar{
+            height:4px;
+        }
+        .topic-youtubeContainer::-webkit-scrollbar-thumb, .cource-project::-webkit-scrollbar-thumb, .free-course-list::-webkit-scrollbar-thumb{
+            background-color:rgb(255, 213, 213);
+            border-radius:10px;
+        }
+        .com-req::-webkit-scrollbar{
+            height:5px;
+        }
+        .com-req::-webkit-scrollbar-thumb{
+            background-color: #1d3a91;
+            border-radius:5px;
         }
     </style>
 </head>
@@ -299,7 +427,7 @@
                 <li><a href="#">Oppertunites</a></li>
                 <li><a href="#">Members</a></li>
                 <li><a href="#">Contribue</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="../Blog/blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -396,6 +524,32 @@
                         }
                     }
                 </script>
+            </div>
+            <div class="phone-table-role-info">
+                <table class="role-basic-info" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>Salary for Fresher</td>
+                            <td>Average 4.5LPA (2 to 15LPA)</td>
+                        </tr>
+                        <tr>
+                            <td>Salary for Experience of more than 5 to 10 year</td>
+                            <td>Average of 10LPA (5 to 40LPA)</td>
+                        </tr>
+                        <tr>
+                            <td>Months required to learn:</td>
+                            <td>12 to 20 Months</td>
+                        </tr>
+                        <tr>
+                            <td>Glass Door Detailed info.</td>
+                            <td><a href="https://www.glassdoor.co.in/Career/embedded-engineer-career_KO0,17.htm">Embedded Engineering</a></td>
+                        </tr>
+                        <tr>
+                            <td>Ambition Box info.</td>
+                            <td><a href="https://www.ambitionbox.com/profile/embedded-software-engineer-salary">Embedded Engineering</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <!-- Topics need to cover -->
             <div class="topics-ntc">
@@ -563,7 +717,7 @@
                     function topic1exapnd(){
                         var text=document.getElementById("topic_body");
                         var btn=document.getElementById("topicarrow");
-    
+                        console.log(text);
                         if(text.style.display ==="none"){
                             btn.style.transform="rotate(0deg)";
                             text.style.display="inline";
@@ -576,32 +730,46 @@
                 </script>
                 <div class="topic1 topic">
                     <div class="topic_head topic1_head">
-                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                        <button class="topic2_expand topic_expand" id="topic2_expand" onclick="topic2exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Programming (C and C++)</h3></button>
                     </div>
-                    <div class="topic_body topic1_body" id="topic_body">
+                    <div class="topic2_body" id="topic2_body">
                         <p class="topic-free-courses">Course:</p>
                         <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
                             <div class="free-course-list">
-                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                <a href="https://www.youtube.com/watch?v=KJgsSFOSQv0&list=PLWKjhJtqVAbmUE5IqyfGYEYjrZBYzaT4m&index=1" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <img src="https://i.ytimg.com/vi/KJgsSFOSQv0/hqdefault.jpg" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <p class="c-title">C Programming</p>
+                                            <p class="c-from">Course from <span>Freecodecamp </span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
-                                                <p class="tag">Text</p>
+                                                <p class="tag">youtube</p>
                                                 <p class="tag">Free</p>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                <a href="https://www.youtube.com/watch?v=8jLOx1hD3_o&t=94693s" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <img src="https://i.ytimg.com/vi/8jLOx1hD3_o/hq720.jpg" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic Electronics</p>
-                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <p class="c-title">C++ Programming</p>
+                                            <p class="c-from">Course from <span>Freecodecamp </span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href=https://www.udemy.com/course/c-programming-2019-master-the-basics/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://img-c.udemycdn.com/course/240x135/2404554_f8ce_2.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Master the Basics in C</p>
+                                            <p class="c-from">Course from <span>Udemy</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Video</p>
@@ -610,15 +778,57 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                <a href="https://www.programiz.com/c-programming" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u7UBHksUABna2hO-ZKeXTEdL8ZRruvFUbA&usqp=CAUng" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <p class="c-title">C-Programming</p>
+                                            <p class="c-from">Course from <span>Programiz</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
-                                                <p class="tag">Video</p>
+                                                <p class="tag">text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/playlist?list=PLk6CEY9XxSIA-xo3HRYC3M0Aitzdut7AA" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/LyGlTmaWEPs/hqdefault.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">STL in C++</p>
+                                            <p class="c-from">Course from <span>CppNuts </span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.hackerrank.com/domains/tutorials/30-days-of-code" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://hrcdn.net/og/default.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">30 Days of Challenge</p>
+                                            <p class="c-from">Challenge from <span>Hackerrank</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Challenge</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/playlist?list=PL9IEJIKnBJjH_zM5LnovnoaKlXML5qh17" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/bdIiTxtMaKA/hqdefault.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Network Programming in C</p>
+                                            <p class="c-from">Course from <span>Jacob Sorber</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
                                                 <p class="tag">Free</p>
                                             </div>
                                         </div>
@@ -628,21 +838,21 @@
                             <p class="c-projects">Projects:</p>
                             <div class="cource-project">
                                 <div class="project project1">
-                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
-                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
-                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
-                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
-                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <p class="p-title">Problem Solving Practice</p>
+                                    <a href="https://www.hackerrank.com/domains/c" class="p-link">Problem Solving in C (Hackerrank)</a>
+                                    <a href="https://www.geeksforgeeks.org/c-programming-examples/" class="p-link">100+ Programs in C from geeksforgeeks</a>
+                                    <a href="https://leetcode.com/" class="p-link">LeetCode</a>
                                     <div class="p-tags">
-                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Basic+</p>
                                         <p class="p-tag">Text</p>
+                                        <p class="p-tag">Challenge</p>
                                     </div>
                                 </div>
                                 <div class="project project1">
-                                    <p class="p-title">Multivibrator</p>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
+                                    <p class="p-title">Simple Projects</p>
+                                    <a href="https://www.youtube.com/watch?v=ZKzhfuic1o0" class="p-link">Keylogger in C</a>
+                                    <a href="https://www.geeksforgeeks.org/expression-evaluation/" class="p-link">Expression Evaluation</a>
+                                    <a href="https://www.youtube.com/watch?v=_889aB2D1KI" class="p-link">Tic Tac Toe</a>
                                     <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Basic Plus</p>
@@ -650,20 +860,176 @@
                                     </div>
                                 </div>
                                 <div class="project project1">
-                                    <p class="p-title">Counter and Timer Projects</p>
-                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
-                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
+                                    <p class="p-title">Simple Plus Project</p>
+                                    <a href="https://www.youtube.com/watch?v=mPmYG7WkEkQ" class="p-link">Hostel Room allocation system using file handeling</a>
+                                    <a href="https://www.youtube.com/playlist?list=PL3pKgZpYZLjmNpbeZrcL8pBSq3YPb-8G6" class="p-link">Snake Game in C</a>
+                                    <a href="https://codescracker.com/c/program/c-program-encrypt-file.htm#:~:text=Encrypt%20or%20Decrypt%20a%20File%20in%20C,back%20to%20its%20original%20form." class="p-link">Encrypt and decrypt a file</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Intermediate+</p>
                                         <p class="p-tag">Text</p>
                                     </div>
                                 </div>
                                 <div class="project project1">
-                                    <p class="p-title">Op-Amps and Oscillators</p>
-                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
-                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
-                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
-                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
+                                    <p class="p-title">C++ Projects</p>
+                                    <a href="https://youtu.be/xW8skO7MFYw" class="p-link">Simple First Person Shooter</a>
+                                    <a href="https://www.youtube.com/watch?v=X4LyyvGLABg" class="p-link">Car Game in C++ using ASCII Characters</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate+</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                                <div class="otherInTop other1">
+                                    <p class="otherTtitle">Interview Questions</p>
+                                    <a href="https://www.interviewbit.com/c-interview-questions/" class="otherLink">C Interview Preparation</a>
+                                    <a href="https://www.interviewbit.com/cpp-interview-questions/" class="otherLink">C++ Interview Preparation</a>
+                                    <a href="https://www.geeksforgeeks.org/c-cpp-tricky-programs/" class="otherLink">Tricky Programs</a>
+                                    <a href="https://www.youtube.com/playlist?list=PLgwJf8NK-2e5ovLgoJkv0Pn58UrucrTPt" class="otherLink">Youtube playlist for Tricky Programs</a>
+                                    <a href="https://www.geeksforgeeks.org/cc-programs/" class="otherLink">coading questions</a>
+                                </div>
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO7HrBw9gfcNTswg7hQzhD8rlWGcn4kk_Aet7YfqQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@JacobSorber" class="youtubeChannelName">Jacob Sorber</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPOln_JxIU4V-k9gHlUVgV4dIK9jQaM2Z9iEIdgrg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@BroCodez" class="youtubeChannelName">Bro Code</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/W9ySfNFEzjhBPkGKB7VCjxPhtOz8uT4k0OFij6Du8E4JzcE_Xp9knl75HlBGFKB8LUvdvEQVPA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@JennyslecturesCSIT" class="youtubeChannelName">Jenny's Lectures</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.ggpht.com/ytc/AGIKgqOG_9I04K14UIdmCerYxLklN3o05MM1m2mXa1h9=s48-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@javidx9" class="youtubeChannelName">javidx9</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPmVT6_YQd7RIhhoy9So5Jk9Iqw8pzivKCfLPm_Yg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@CodeWithHarry" class="youtubeChannelName">CodeWithHarry</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMl9TL4OpwS8Zc5jHrNnfO01f_Wbovye9mQzfp36Q=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@freecodecamp" class="youtubeChannelName">freecodecamp</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNLgUGqFcHkGYX3tC4Z09JJ8ncNRKP4TwvV0HrbQQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@tmwilliamlin168" class="youtubeChannelName">William Lin</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMHwRFm7cKI_kZ4gCNOT0toGcmv6OIQikXZpFOEBg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ColinGalen" class="youtubeChannelName">Colin Galen</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/XCrBBAMNF2JLmu2UIMGxDV6nzclwfcnOvsHfkit2mG2rbD07QlR4XClZg5RP2zoaovP4mKfMZA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@CodingWithLewis" class="youtubeChannelName">Coding with Lewis</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPQwSq13N7mPdoNupMsSA8sWludy67GiLxhoalYEw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Errichto" class="youtubeChannelName">Errichto</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <script>
+                    function topic2exapnd(){
+                        var text=document.getElementById("topic2_body");
+                        var btn=document.getElementById("topicarrow");
+                        console.log(text);
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script>
+                <div class="topic1 topic">
+                    <div class="topic_head topic3_head">
+                        <button class="topic3_expand topic_expand" id="topic3_expand" onclick="topic3exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Arduino Programming</h3></button>
+                    </div>
+                    <div class="topic3_body" id="topic3_body">
+                        <p class="topic-free-courses">Course:</p>
+                        <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
+                            <div class="free-course-list">
+                                <a href="https://docs.arduino.cc/built-in-examples/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://cdn.sparkfun.com/assets/9/1/e/4/8/515b4656ce395f8a38000000.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Basic of Arduino Programing</p>
+                                            <p class="c-from">Course from <span>Arduino.cc</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://youtu.be/zJ-LqeX_fLU" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/zJ-LqeX_fLU/hq720.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Arduino Course for beginners</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/playlist?list=PLyHidcMF_ClQiy0gSDQZtnbayd_usv2VL" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/j2yh_sxCbgo/hqdefault.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Wokwi Simulation</p>
+                                            <p class="c-from">Course from <span>Electronics by Simulation</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="c-projects">Projects:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">Basic Projects</p>
+                                    <a href="https://www.youtube.com/watch?v=n9TMs46DpGM" class="p-link">Car Speed Detector</a>
+                                    <a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/toneKeyboard" class="p-link">Tone keyboard</a>
+                                    <a href="https://www.geeksforgeeks.org/distance-measurement-using-ultrasonic-sensor-and-arduino" class="p-link">Distance Measurement using ultrasonic sensor</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Advanced Project</p>
+                                    <a href="https://docs.arduino.cc/built-in-examples/usb/KeyboardAndMouseControl" class="p-link">Keyboard and Mouse control</a>
+                                    <a href="https://docs.arduino.cc/built-in-examples/sensors/ADXL3xx" class="p-link">Accelerometer sensor</a>
+                                    <a href="https://arduinogetstarted.com/tutorials/arduino-gps" class="p-link">Arduino with GPS</a>
+                                    <a href="https://www.instructables.com/Home-Automation-Using-Arduino-With-Wifi-Bluetooth-/" class="p-link">Home Automation with bluetooth</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">More Projects</p>
+                                    <a href="https://projecthub.arduino.cc/?_gl=1*1o4b8vv*_ga*MTI3NDM3MDQ1LjE2ODMxNzc4MjY.*_ga_NEXN8H46L5*MTY4MzE3NzgyNi4xLjEuMTY4MzE4MDEwNi4wLjAuMA.." class="p-link">Arduino ProjectHub</a>
+                                    <a href="https://www.youtube.com/playlist?list=PLPJQlEokVM70zzWCbuYa3Uee2wAfIWgS9" class="p-link">300+ Projects</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Intermediate+</p>
                                         <p class="p-tag">Text and video</p>
@@ -674,60 +1040,58 @@
                             <div class="other-topic-container">
                                 <div class="otherInTop other1">
                                     <p class="otherTtitle">Interview Questions</p>
-                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
-                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
-                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                    <a href="https://www.sanfoundry.com/1000-arduino-questions-answers/" class="otherLink">Arduino MCQ's</a>
                                 </div>
                                 <div class="topic-youtube-channel">
                                     <p class="topic-youtube-title">Relevant Youtube Channels</p>
                                     <div class="topic-youtubeContainer">
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                            <img src="https://yt3.googleusercontent.com/MHvH7S9PfCXKQhgnJdolQiSQnICjNHibXReq24EZGX3M5_wgVG708rYnpS7956eX7L33pyC8=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Circuitdigest" class="youtubeChannelName">Circuit Digest</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                            <img src="https://yt3.googleusercontent.com/n4Pqmpc18DUqhFaA_mF1SoaYbmlDIwQWXrn82jj6BCVvraQd5PfpHYgE7wvbFDgQgmXODtE=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@maker101io" class="youtubeChannelName">Maker 101</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                            <img src="https://yt3.googleusercontent.com/iHQ87ozZw0NVwKuD61UnWlmhZlAic_NBYzRzjwYkxIa3igP1Z0OfRupV-_fYeCUUH2dPZjFpBQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ElectronicsHubOfficial" class="youtubeChannelName">ElectronicsHub</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                            <img src="https://yt3.googleusercontent.com/_OPB1zNwGqugK8wfCi-zuMcROqgvkrh_lhYuj0SdFN3_ggt13Vl6drvkzOxBToQMMerv6GJX=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Techatronic-Shahid" class="youtubeChannelName">Techatronic</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPHkZO4VBeXetlOi9hway3LBAlP1665xA_YbUJj=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@HowToMechatronics" class="youtubeChannelName">How to Mechatronics</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOb_Mp5vfSFsD-f7b-Dll03ZPyOC2CL5FJ8guV3=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@DIYBuilder" class="youtubeChannelName">DIY Builder</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                            <img src="https://yt3.googleusercontent.com/4OjKwGB801lYZcK1LqMAWzO1TMgbtJe07ZTteCp7jC_HeCzgCAdVZPRduPHL2sOvqmfCnBPX=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Harshsharma5" class="youtubeChannelName">Harsh Sharma</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNVh3Sj_CPklNyQrQ9owvqDUN1S6xXidZT6K8F2kA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@IndianLifeHacker" class="youtubeChannelName">Indian LifeHacker</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPxJbefcAonbDDRkos4_3s6_BEmkkPvrbt7OMQK=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ToPProjectsCompilation" class="youtubeChannelName">ToP Projects Compilation</a>
                                         </div>
                                         <div class="youtubechannels">
                                             <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
                                             <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                            <img src="https://yt3.googleusercontent.com/BIIBwSUUhHkvBM8i7tRludROgLL3voxq9tfmYYNXFFjZeSkZ_3p8UHdKzsAJs_h1WIArz_fQ_9M=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ElectroniClinic" class="youtubeChannelName">ElectronicClinic</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Inovation Ideas</a>
                                         </div>
                                     </div>
                                 </div>
@@ -735,8 +1099,8 @@
                         </div>
                 </div>
                 <script>
-                    function topic1exapnd(){
-                        var text=document.getElementById("topic_body");
+                    function topic3exapnd(){
+                        var text=document.getElementById("topic3_body");
                         var btn=document.getElementById("topicarrow");
     
                         if(text.style.display ==="none"){
@@ -748,33 +1112,20 @@
                             text.style.display="none";
                         }
                     }
-                </script><div class="topic1 topic">
+                </script>
+                <div class="topic4 topic">
                     <div class="topic_head topic1_head">
-                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                        <button class="topic4_expand topic_expand" id="topic4_expand" onclick="topic4exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Microprocessor and Microcontroller</h3></button>
                     </div>
-                    <div class="topic_body topic1_body" id="topic_body">
+                    <div class="topic4_body" id="topic4_body">
                         <p class="topic-free-courses">Course:</p>
                         <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
                             <div class="free-course-list">
-                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                <a href="https://archive.nptel.ac.in/courses/108/105/108105102/" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <img src="https://i.ytimg.com/vi_webp/MqWeH3zp5GY/sddefault.webp" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>Electronicshub</span></p>
-                                            <div class="course-tag">
-                                                <p class="tag">Good</p>
-                                                <p class="tag">Text</p>
-                                                <p class="tag">Free</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
-                                    <div class="contain-c-d">
-                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
-                                        <div class="course-title">
-                                            <p class="c-title">Basic Electronics</p>
+                                            <p class="c-title">Microprocessors and Microcontroller</p>
                                             <p class="c-from">Course from <span>NPTEL</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
@@ -784,12 +1135,54 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                <a href="https://www.arm.com/resources/education/online-courses" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <img src="https://www.watelectronics.com/wp-content/uploads/arm-processor.jpg" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <p class="c-title">ARM Courses</p>
+                                            <p class="c-from">Course from <span>ARM</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.edx.org/course/embedded-systems-shape-the-world-microcontroller-i" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://prod-discovery.edx-cdn.org/media/course/image/785cf551-7f66-4350-b736-64a93427b4db-3dcdedbdf99d.small.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Embedded Systems - Shape The World</p>
+                                            <p class="c-from">Course from <span>EDX</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://archive.nptel.ac.in/courses/106/105/106105193/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi_webp/uFhDGagZzjs/maxresdefault.webp" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Embedded System Design with ARM</p>
+                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=gfmRrPjnEw4&t=219s&pp=ygUKQVJNIENPVVJTRQ%3D%3D" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/gfmRrPjnEw4/hq720.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Assembly Language programming with ARM</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Video</p>
@@ -802,45 +1195,31 @@
                             <p class="c-projects">Projects:</p>
                             <div class="cource-project">
                                 <div class="project project1">
-                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
-                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
-                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
-                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
-                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <p class="p-title">Projects</p>
+                                    <a href="https://www.electronicshub.org/line-follower-robot-using-microcontroller/" class="p-link">Line Following Robot</a>
+                                    <a href="https://www.electronicshub.org/rfid-based-attendance-system/" class="p-link">RFID-Based Attendance System</a>
+                                    <a href="https://www.electronicshub.org/5-channel-ir-remote-control-system-using-microcontroller/" class="p-link">Ir remote control system</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Intermediate</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">MORE</p>
+                                    <a href="https://www.electronicshub.org/microcontroller-based-mini-projects-ideas/" class="p-link">100+ Projects from ElectronicsHUB</a>
+                                    <a href="https://hackaday.io/discover" class="p-link">Hackaday</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Basic Plus</p>
                                         <p class="p-tag">Text</p>
                                     </div>
                                 </div>
                                 <div class="project project1">
-                                    <p class="p-title">Multivibrator</p>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
+                                    <p class="p-title">ARM Projects</p>
+                                    <a href="https://www.electronicshub.org/arm-based-projects/" class="p-link">60+ Projects on ARM</a>
+                                    <a href="https://1000projects.org/projects/arm-11-projects" class="p-link">more arm projects</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Basic Plus</p>
                                         <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Counter and Timer Projects</p>
-                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
-                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Intermediate+</p>
-                                        <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Op-Amps and Oscillators</p>
-                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
-                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
-                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
-                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Intermediate+</p>
-                                        <p class="p-tag">Text and video</p>
                                     </div>
                                 </div>
                             </div>
@@ -848,60 +1227,75 @@
                             <div class="other-topic-container">
                                 <div class="otherInTop other1">
                                     <p class="otherTtitle">Interview Questions</p>
-                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
-                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
-                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                    <a href="https://www.sanfoundry.com/microprocessors-questions-answers/" class="otherLink">MCQ Questions</a>
+                                    <a href="https://www.knowledgehut.com/interview-questions/microcontroller-interview-questions" class="otherLink">Microcontroller interview question</a>
+                                    <a href="https://www.onlineinterviewquestions.com/microprocessor-interview-questions/" class="otherLink">Microprocessor interview question</a>
                                 </div>
                                 <div class="topic-youtube-channel">
                                     <p class="topic-youtube-title">Relevant Youtube Channels</p>
                                     <div class="topic-youtubeContainer">
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                            <img src="https://yt3.googleusercontent.com/MHvH7S9PfCXKQhgnJdolQiSQnICjNHibXReq24EZGX3M5_wgVG708rYnpS7956eX7L33pyC8=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Circuitdigest" class="youtubeChannelName">Circuit Digest</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                            <img src="https://yt3.googleusercontent.com/n4Pqmpc18DUqhFaA_mF1SoaYbmlDIwQWXrn82jj6BCVvraQd5PfpHYgE7wvbFDgQgmXODtE=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@maker101io" class="youtubeChannelName">Maker 101</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                            <img src="https://yt3.googleusercontent.com/iHQ87ozZw0NVwKuD61UnWlmhZlAic_NBYzRzjwYkxIa3igP1Z0OfRupV-_fYeCUUH2dPZjFpBQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ElectronicsHubOfficial" class="youtubeChannelName">ElectronicsHub</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                            <img src="https://yt3.googleusercontent.com/_OPB1zNwGqugK8wfCi-zuMcROqgvkrh_lhYuj0SdFN3_ggt13Vl6drvkzOxBToQMMerv6GJX=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Techatronic-Shahid" class="youtubeChannelName">Techatronic</a>
+                                        </div>
+
+
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMzpuaidRd1mVuj00hp543ucvtnLWY6Y2UVOPAU2g=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@PatrickHoodDaniel" class="youtubeChannelName">BuildYourCNC</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOCwZe53h2Fed9sLR4oXeSCbFGw5EQCmD3cOnk6=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@0033mer" class="youtubeChannelName">000mer</a>
+                                        </div><div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMQSCD5ThAjZrlNFlOMC03AFORnYxiKbsYR9RDwyQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@svskits" class="youtubeChannelName">svsembedded</a>
+                                        </div>
+
+
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPHkZO4VBeXetlOi9hway3LBAlP1665xA_YbUJj=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@HowToMechatronics" class="youtubeChannelName">How to Mechatronics</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOb_Mp5vfSFsD-f7b-Dll03ZPyOC2CL5FJ8guV3=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@DIYBuilder" class="youtubeChannelName">DIY Builder</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                            <img src="https://yt3.googleusercontent.com/4OjKwGB801lYZcK1LqMAWzO1TMgbtJe07ZTteCp7jC_HeCzgCAdVZPRduPHL2sOvqmfCnBPX=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Harshsharma5" class="youtubeChannelName">Harsh Sharma</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNVh3Sj_CPklNyQrQ9owvqDUN1S6xXidZT6K8F2kA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@IndianLifeHacker" class="youtubeChannelName">Indian LifeHacker</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPxJbefcAonbDDRkos4_3s6_BEmkkPvrbt7OMQK=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ToPProjectsCompilation" class="youtubeChannelName">ToP Projects Compilation</a>
                                         </div>
                                         <div class="youtubechannels">
                                             <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
                                             <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                            <img src="https://yt3.googleusercontent.com/BIIBwSUUhHkvBM8i7tRludROgLL3voxq9tfmYYNXFFjZeSkZ_3p8UHdKzsAJs_h1WIArz_fQ_9M=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ElectroniClinic" class="youtubeChannelName">ElectronicClinic</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Inovation Ideas</a>
                                         </div>
                                     </div>
                                 </div>
@@ -909,8 +1303,8 @@
                         </div>
                 </div>
                 <script>
-                    function topic1exapnd(){
-                        var text=document.getElementById("topic_body");
+                    function topic4exapnd(){
+                        var text=document.getElementById("topic4_body");
                         var btn=document.getElementById("topicarrow");
     
                         if(text.style.display ==="none"){
@@ -922,20 +1316,35 @@
                             text.style.display="none";
                         }
                     }
-                </script><div class="topic1 topic">
-                    <div class="topic_head topic1_head">
-                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                </script>
+                <div class="topic5 topic">
+                    <div class="topic_head topic5_head">
+                        <button class="topic5_expand topic_expand" id="topic5_expand" onclick="topic5exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Internet of Things</h3></button>
                     </div>
-                    <div class="topic_body topic1_body" id="topic_body">
+                    <div class="topic5_body" id="topic5_body">
                         <p class="topic-free-courses">Course:</p>
                         <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
                             <div class="free-course-list">
-                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                <a href="https://online.stanford.edu/courses/xee100-introduction-internet-things" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <img src="https://online.stanford.edu/sites/default/files/styles/widescreen_tiny/public/2018-03/introduction-internet-of-things_xee100.jpg?h=66807ab2&itok=qLrh3BXy" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <p class="c-title">Internet of Things</p>
+                                            <p class="c-from">Course from <span>Stanford</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text + Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.netacad.com/courses/iot" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://cdn.mindmajix.com/courses/iot-training.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Internet of Things</p>
+                                            <p class="c-from">Course from <span>Cisco</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Text</p>
@@ -944,26 +1353,26 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                <a href="https://github.com/microsoft/IoT-For-Beginners" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <img src="https://camo.githubusercontent.com/896869560aa4fdb3fd5a429d94fe01a5e35b4ef3e933e6d1666bc1dd04569114/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f626363454d6d38675275632f302e6a7067" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic Electronics</p>
-                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <p class="c-title">Internet of Things</p>
+                                            <p class="c-from">Course from <span>Microsoft</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
-                                                <p class="tag">Video</p>
+                                                <p class="tag">Text</p>
                                                 <p class="tag">Free</p>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                <a href="https://www.coursera.org/specializations/iot#courses" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <img src="https://www.zdnet.com/a/img/resize/fe3cd4335dd088e466578422640b646f641609ec/2020/09/28/6b225a1a-381a-4ceb-b13c-d2d314d41bd7/what-is-the-iot-everything-you-need-to-k-5f6cc13d5f60de4b41b7f3d4-1-sep-28-2020-16-19-38-poster.jpg?auto=webp&fit=crop&height=675&width=1200" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <p class="c-title">Internet of Things</p>
+                                            <p class="c-from">Course from <span>Coursera</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Video</p>
@@ -976,45 +1385,24 @@
                             <p class="c-projects">Projects:</p>
                             <div class="cource-project">
                                 <div class="project project1">
-                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
-                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
-                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
-                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
-                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <p class="p-title">IOT Projects</p>
+                                    <a href="https://how2electronics.com/home-automation-with-arduino-iot-cloud-using-esp32/" class="p-link">Home Automation</a>
+                                    <a href="https://www.youtube.com/watch?v=9geREeE13jc&pp=ygUMSU9UIHByb2plY3Rz" class="p-link">Water level monitoring system</a>
+                                    <a href="https://www.youtube.com/watch?v=o9aa_x6x8Jg&pp=ygVCaG9tZSBzZWN1cml0eSBzeXN0ZW0gaW90IHByb2plY3QgdXNpbmcgdGhpbmdzcGVhayBtaXQgYXBwIGludmVudG9y" class="p-link">Home Secuirty system</a>
+                                    <a href="https://www.youtube.com/watch?v=3RPJtL2rnXc&pp=ygVCaG9tZSBzZWN1cml0eSBzeXN0ZW0gaW90IHByb2plY3QgdXNpbmcgdGhpbmdzcGVhayBtaXQgYXBwIGludmVudG9y" class="p-link">IOT and Firebase</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Youtube</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">More projects</p>
+                                    <a href="https://circuitdigest.com/internet-of-things-iot-projects" class="p-link">100+ Projects from circuitdigest</a>
+                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">30+ Projects from Electronics for you</a>
+                                    <a href="https://www.youtube.com/results?search_query=IOT+projects" class="p-link">More on youtube</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Basic Plus</p>
                                         <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Multivibrator</p>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Basic Plus</p>
-                                        <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Counter and Timer Projects</p>
-                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
-                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Intermediate+</p>
-                                        <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Op-Amps and Oscillators</p>
-                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
-                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
-                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
-                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Intermediate+</p>
-                                        <p class="p-tag">Text and video</p>
                                     </div>
                                 </div>
                             </div>
@@ -1022,60 +1410,75 @@
                             <div class="other-topic-container">
                                 <div class="otherInTop other1">
                                     <p class="otherTtitle">Interview Questions</p>
-                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
-                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
-                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                    <a href="https://www.interviewbit.com/iot-interview-questions/" class="otherLink">IOT Interview question</a>
+                                    <a href="https://www.interviewbit.com/iot-mcq/" class="otherLink">IOT MCQ Questions</a>
+                                    <a href="https://www.sanfoundry.com/1000-iot-questions-answers/?__cf_chl_tk=Y.LfrReBX8K7hipqK1OBqlOaDjqlljG0zkEn6Dj2QhI-1683291485-0-gaNycGzNDpA" class="otherLink">MCQ Questions</a>
                                 </div>
                                 <div class="topic-youtube-channel">
                                     <p class="topic-youtube-title">Relevant Youtube Channels</p>
                                     <div class="topic-youtubeContainer">
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                            <img src="https://yt3.googleusercontent.com/MHvH7S9PfCXKQhgnJdolQiSQnICjNHibXReq24EZGX3M5_wgVG708rYnpS7956eX7L33pyC8=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Circuitdigest" class="youtubeChannelName">Circuit Digest</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                            <img src="https://yt3.googleusercontent.com/n4Pqmpc18DUqhFaA_mF1SoaYbmlDIwQWXrn82jj6BCVvraQd5PfpHYgE7wvbFDgQgmXODtE=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@maker101io" class="youtubeChannelName">Maker 101</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                            <img src="https://yt3.googleusercontent.com/iHQ87ozZw0NVwKuD61UnWlmhZlAic_NBYzRzjwYkxIa3igP1Z0OfRupV-_fYeCUUH2dPZjFpBQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ElectronicsHubOfficial" class="youtubeChannelName">ElectronicsHub</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                            <img src="https://yt3.googleusercontent.com/_OPB1zNwGqugK8wfCi-zuMcROqgvkrh_lhYuj0SdFN3_ggt13Vl6drvkzOxBToQMMerv6GJX=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Techatronic-Shahid" class="youtubeChannelName">Techatronic</a>
+                                        </div>
+
+
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMzpuaidRd1mVuj00hp543ucvtnLWY6Y2UVOPAU2g=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@PatrickHoodDaniel" class="youtubeChannelName">BuildYourCNC</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOCwZe53h2Fed9sLR4oXeSCbFGw5EQCmD3cOnk6=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@0033mer" class="youtubeChannelName">000mer</a>
+                                        </div><div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMQSCD5ThAjZrlNFlOMC03AFORnYxiKbsYR9RDwyQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@svskits" class="youtubeChannelName">svsembedded</a>
+                                        </div>
+
+
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPHkZO4VBeXetlOi9hway3LBAlP1665xA_YbUJj=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@HowToMechatronics" class="youtubeChannelName">How to Mechatronics</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOb_Mp5vfSFsD-f7b-Dll03ZPyOC2CL5FJ8guV3=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@DIYBuilder" class="youtubeChannelName">DIY Builder</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                            <img src="https://yt3.googleusercontent.com/4OjKwGB801lYZcK1LqMAWzO1TMgbtJe07ZTteCp7jC_HeCzgCAdVZPRduPHL2sOvqmfCnBPX=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Harshsharma5" class="youtubeChannelName">Harsh Sharma</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNVh3Sj_CPklNyQrQ9owvqDUN1S6xXidZT6K8F2kA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@IndianLifeHacker" class="youtubeChannelName">Indian LifeHacker</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPxJbefcAonbDDRkos4_3s6_BEmkkPvrbt7OMQK=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ToPProjectsCompilation" class="youtubeChannelName">ToP Projects Compilation</a>
                                         </div>
                                         <div class="youtubechannels">
                                             <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
                                             <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                            <img src="https://yt3.googleusercontent.com/BIIBwSUUhHkvBM8i7tRludROgLL3voxq9tfmYYNXFFjZeSkZ_3p8UHdKzsAJs_h1WIArz_fQ_9M=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ElectroniClinic" class="youtubeChannelName">ElectronicClinic</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Inovation Ideas</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1083,8 +1486,8 @@
                         </div>
                 </div>
                 <script>
-                    function topic1exapnd(){
-                        var text=document.getElementById("topic_body");
+                    function topic5exapnd(){
+                        var text=document.getElementById("topic5_body");
                         var btn=document.getElementById("topicarrow");
     
                         if(text.style.display ==="none"){
@@ -1096,20 +1499,35 @@
                             text.style.display="none";
                         }
                     }
-                </script><div class="topic1 topic">
-                    <div class="topic_head topic1_head">
-                        <button class="topic1_expand topic_expand" id="topic1_expand" onclick="topic1exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Basics of Electronics</h3></button>
+                </script>
+                <div class="topi65 topic">
+                    <div class="topic_head topic6_head">
+                        <button class="topic6_expand topic_expand" id="topic6_expand" onclick="topic6exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>DSA and Problem Solving</h3></button>
                     </div>
-                    <div class="topic_body topic1_body" id="topic_body">
+                    <div class="topic6_body" id="topic6_body">
                         <p class="topic-free-courses">Course:</p>
                         <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
                             <div class="free-course-list">
-                                <a href="https://www.electronicshub.org/tutorials/" class="c-img-link">
+                                <a href="https://www.udacity.com/course/data-structures-and-algorithms-in-python--ud513" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg" alt="" class="c-img">
+                                        <img src="https://i.ytimg.com/vi/NKBUbUiedzc/hqdefault_133.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAftx1rlz4WUemL9DT9lKejm6QgNg" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>Electronicshub</span></p>
+                                            <p class="c-title">Intro to DSA</p>
+                                            <p class="c-from">Course from <span>Google</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.edx.org/course/algorithms-design-and-analysis?irclickid=yY-Wi3X0xxyNWYi3KzWuN1bhUkAVIm3fFzyaz40&utm_source=affiliate&utm_medium=Class%20Central&utm_campaign=Harvard%27s%20Computer%20Science%20for%20Python%20Programming_&utm_content=TEXT_LINK&irgwc=1" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://prod-discovery.edx-cdn.org/media/course/image/9c47939a-dab7-4208-84d4-defd8626741c-89b4f5786859.small.jpeg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Algorithm Design And Analysis</p>
+                                            <p class="c-from">Course from <span>Stanford</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Text</p>
@@ -1118,12 +1536,12 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://onlinecourses.nptel.ac.in/noc21_ee55/preview" class="c-img-link">
+                                <a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/video_galleries/lecture-videos/" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://storage.googleapis.com/swayam2-node/Jan_2021_course_cardimage/noc21-ee55.jpg" alt="" class="c-img">
+                                        <img src="https://inprogrammer.com/wp-content/uploads/2022/03/image-2.png" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic Electronics</p>
-                                            <p class="c-from">Course from <span>NPTEL</span></p>
+                                            <p class="c-title">Introduction to Algorithm</p>
+                                            <p class="c-from">Course from <span>MIT Opencourseware</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Video</p>
@@ -1132,15 +1550,405 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="https://www.allaboutcircuits.com/video-tutorials/" class="c-img-link">
+                                <a href="https://www.interviewcake.com/table-of-contents" class="c-img-link">
                                     <div class="contain-c-d">
-                                        <img src="https://www.allaboutcircuits.com/images/site/og_default.png" alt="" class="c-img">
+                                        <img src="https://statushero.com/assets/wBXU1EqwyU-1000.png" alt="" class="c-img">
                                         <div class="course-title">
-                                            <p class="c-title">Basic of Electronics</p>
-                                            <p class="c-from">Course from <span>AllAboutCircuits</span></p>
+                                            <p class="c-title">Interview Cake DSA Course</p>
+                                            <p class="c-from">Course from <span>Interviewcake</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free + Paid</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=B31LgI4Y4DQ" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/B31LgI4Y4DQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD628zYU1AQS-DSqEY0cL0uRtPUqA" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">DSA using C and C++</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+
+                                <a href="https://www.youtube.com/watch?v=oBt53YbR9Kk" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/oBt53YbR9Kk/hq720.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Dynamic Programming</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=09_LlHjoEiY" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/09_LlHjoEiY/hq720.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Graph Theory Algorithms</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/playlist?list=PLUzvZMEoR0KvEthotRQR3qoJ5FJxkhvaP" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lfMhrPQM--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/rphqzfoh2cbz3zj8m8t1.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Graph, Dynamic, Greedy Programming,...</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="c-projects">Challenges:</p>
+                            <div class="cource-project">
+                                <div class="project project1">
+                                    <p class="p-title">freecodecamp problems</p>
+                                    <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript" class="p-link">JS DSA Challenges</a>
+                                    <p style="font-size:10px;text-align:center;">It is based on learn by solving challenges using JS as programming language</p>
+                                    <a href="https://www.freecodecamp.org/learn/coding-interview-prep/" class="p-link">Coading Interview Challenges</a>
+                                    <a href="https://www.youtube.com/watch?v=Peq4GCPNC5c&t=3s&pp=ygUdZnJlZWNvZGVjYW1wIHByb2JsZW1zIHNvbHZpbmc%3D" class="p-link">10 Common coding interview questions</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Advanced</p>
+                                        <p class="p-tag">Free Certificate</p>
+                                        <p class="p-tag">Challenges</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Coading Competitions from Big Companies</p>
+                                    <a href="https://codingcompetitions.withgoogle.com/hashcode" class="p-link">Google Hash code</a>
+                                    <a href="https://codingcompetitions.withgoogle.com/codejam" class="p-link">Google Code Jam</a>
+                                    <a href="https://codingcompetitions.withgoogle.com/kickstart" class="p-link">Google Kick start</a>
+                                    <a href="https://www.facebook.com/codingcompetitions/hacker-cup" class="p-link">Facebook hacker cup</a>
+                                    <a href="https://www.tcscodevita.com/index.jsp" class="p-link">TCS codevista</a>
+                                    <a href="https://careers.jpmorgan.com/global/en/students/programs/code-for-good" class="p-link">JP morgan Code for good</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Coading Competitions</p>
+                                    <a href="https://www.hackerrank.com/" class="p-link">Hackerrank</a>
+                                    <a href="https://leetcode.com/" class="p-link">Leetcode</a>
+                                    <a href="https://codeforces.com/" class="p-link">Codeforce</a>
+                                    <a href="https://practice.geeksforgeeks.org/explore?page=1&sortBy=submissions" class="p-link">geeksforgeeks Contest</a>
+                                    <a href="https://www.codechef.com/" class="p-link">Codechef</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Text</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="OtherLinks">Other Important Links:</p>
+                            <div class="other-topic-container">
+                            
+                                <div class="topic-youtube-channel">
+                                    <p class="topic-youtube-title">Relevant Youtube Channels</p>
+                                    <div class="topic-youtubeContainer">
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/QHSRlsZ1dd73aFXa-tvXXKaLLMKT_oN_yt5AJD1P0JPaLRbY57vxd4OiySpqRnHeVLpTHDbY3A=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@HackerrankOfficial" class="youtubeChannelName">HackerRank</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/Lkx3tvgHdRADC3wXQ5TfJZRTeH4nboEPA_-eJChOZ6jRkOdY35lcg014Whj36rHFXhrHY1T_4cs=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@CodeChef1" class="youtubeChannelName">CodeChef</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/h_5EX_GD2dB4Ti3cQbQ1BjGkm_M-EN_z_mWSw7KG-kYzswbULF5bTogzGRm-KcawIqiXgcnJiOM=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Power_Couple" class="youtubeChannelName">Power Couple</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/MWCIzDNJJrk7mU5kV2V9EnyaKXVPn5en7uyX589c2Bu1iizhHY4h1ih02JZJ1cv8KCM8uY8g4OQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@NickWhite" class="youtubeChannelName">Nick White</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPokjCErSUTu9kwhH_6DI_PBtJE5_e2TYStztOr9A=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@TwoMinutePapers" class="youtubeChannelName">Two Minute Paper</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN8YG6ACSnlzJYYrIIsiyDUmh9M9Wf4PNSOoc4wQw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Computerphile" class="youtubeChannelName">Computerphile</a>
+                                        </div>
+                                        
+
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO7HrBw9gfcNTswg7hQzhD8rlWGcn4kk_Aet7YfqQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@JacobSorber" class="youtubeChannelName">Jacob Sorber</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPOln_JxIU4V-k9gHlUVgV4dIK9jQaM2Z9iEIdgrg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@BroCodez" class="youtubeChannelName">Bro Code</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/W9ySfNFEzjhBPkGKB7VCjxPhtOz8uT4k0OFij6Du8E4JzcE_Xp9knl75HlBGFKB8LUvdvEQVPA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@JennyslecturesCSIT" class="youtubeChannelName">Jenny's Lectures</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.ggpht.com/ytc/AGIKgqOG_9I04K14UIdmCerYxLklN3o05MM1m2mXa1h9=s48-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@javidx9" class="youtubeChannelName">javidx9</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPmVT6_YQd7RIhhoy9So5Jk9Iqw8pzivKCfLPm_Yg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@CodeWithHarry" class="youtubeChannelName">CodeWithHarry</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMl9TL4OpwS8Zc5jHrNnfO01f_Wbovye9mQzfp36Q=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@freecodecamp" class="youtubeChannelName">freecodecamp</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNLgUGqFcHkGYX3tC4Z09JJ8ncNRKP4TwvV0HrbQQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@tmwilliamlin168" class="youtubeChannelName">William Lin</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMHwRFm7cKI_kZ4gCNOT0toGcmv6OIQikXZpFOEBg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ColinGalen" class="youtubeChannelName">Colin Galen</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/XCrBBAMNF2JLmu2UIMGxDV6nzclwfcnOvsHfkit2mG2rbD07QlR4XClZg5RP2zoaovP4mKfMZA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@CodingWithLewis" class="youtubeChannelName">Coding with Lewis</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPQwSq13N7mPdoNupMsSA8sWludy67GiLxhoalYEw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@Errichto" class="youtubeChannelName">Errichto</a>
+                                        </div>
+
+
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNbYK6_LqnE7GFw7nH24beTHycTQf4Q-MlTbutr=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@CodeBullet" class="youtubeChannelName">Code Bullet</a>
+                                        </div>
+                                        <div class="youtubechannels">
+                                            <img src="https://yt3.googleusercontent.com/rsKAERVEXNTq6lbdIHUlm3aVAw4R2D1fPkDz-7sPccu9qwic5EYfSe6VI7tNB5-_r0Ip5_P0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@gkcs" class="youtubeChannelName">Gaurav Sen</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <script>
+                    function topic6exapnd(){
+                        var text=document.getElementById("topic6_body");
+                        var btn=document.getElementById("topicarrow");
+    
+                        if(text.style.display ==="none"){
+                            btn.style.transform="rotate(0deg)";
+                            text.style.display="inline";
+                        }
+                        else{
+                            btn.style.transform="rotate(180deg)";
+                            text.style.display="none";
+                        }
+                    }
+                </script>
+                <div class="topic7 topic">
+                    <div class="topic_head topic7_head">
+                        <button class="topic7_expand topic_expand" id="topic7_expand" onclick="topic7exapnd()"><span class="material-symbols-outlined" id="topicarrow">arrow_drop_down</span><h3>Linux and Embedded OS</h3></button>
+                    </div>
+                    <div class="topic7_body" id="topic7_body">
+                        <p class="topic-free-courses">Course:</p>
+                        <p class="c-time">Average Time to Complete:<span>50 to 72 hours</span></p>
+                            <div class="free-course-list">
+                                <a href="https://www.youtube.com/watch?v=sWbUDq4S6Y8&pp=ygUZbGludXggY291cnNlIGZyZWVjb2RlY2FtcA%3D%3D" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/sWbUDq4S6Y8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA1vM0XIYdcXV8w-4Vm5UXKkc_7gw" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Introduction to Linux</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://tryhackme.com/module/linux-fundamentals" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAvRYMee2a-cHJsIa9ofCEGRGnvP60wbdZGEJfDRr2we1xZKDuMa_drTSrWiWDh3xR99M&usqp=CAU" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Linux Fundamentals</p>
+                                            <p class="c-from">Course from <span>TryHackMe</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text+Challenges</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://training.linuxfoundation.org/training/introduction-to-linux/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://training.linuxfoundation.org/wp-content/uploads/2020/03/Training_WebsiteGraphics_Blockchain_LFS174-300x169.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Introduction to Linux</p>
+                                            <p class="c-from">Course from <span>Linuxfoundation</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text + Labs</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://training.linuxfoundation.org/training/a-beginners-guide-to-linux-kernel-development-lfd103/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://training.linuxfoundation.org/wp-content/uploads/2020/03/Training_WebsiteGraphics_Blockchain_LFS174-300x169.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Linux Kernel Development</p>
+                                            <p class="c-from">Course from <span>Linuxfoundation</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.netacad.com/courses/os-it" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2qyVEH6dG8Q56Rg8UK6JxWP7JICDxGqIhQnbNL3i6e017NRvo4Fx0C44bwrwLbYf5xZg&usqp=CAU" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Linux Courses</p>
+                                            <p class="c-from">Course from <span>Cisco</span></p>
                                             <div class="course-tag">
                                                 <p class="tag">Good</p>
                                                 <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.edx.org/course/building-applications-with-risc-v-and-freertos?index=product&queryID=0c44a5fc7421e5371ecf75653140478c&position=2&v=1&linked_from=autocomplete&c=autocomplete" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://prod-discovery.edx-cdn.org/media/course/image/e92352d8-84de-41d2-9a02-c6d968aadcb5-ba3b8be29dcf.small.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Risc-V and FreeRTOS</p>
+                                            <p class="c-from">Course from <span>Linuxfoundation</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.coursera.org/learn/embedded-operating-system" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/4d/4697c057e811e6aedaabbfe4790655/fig1.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Embedded Hardware and OS</p>
+                                            <p class="c-from">Course from <span>Coursera</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a><a href="https://openwrt.org/docs/guide-user/start" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://files.seeedstudio.com/wiki/OpenWrt/openwrt-wiki-thumb.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Openwrt OS</p>
+                                            <p class="c-from">Guide from <span>OpenWrt</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://os.mbed.com/docs/mbed-os/v6.16/introduction/index.html" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://blog.st.com/wp-content/uploads/feature.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Mbed OS</p>
+                                            <p class="c-from">Guide from <span>ARM MBED</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/pages/syllabus/" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://www.ocw-openmatters.org/wp-content/uploads/2019/04/MIT-OpenCourseware-Header.png" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Operating System Engineering</p>
+                                            <p class="c-from">Course from <span>MITOpenCourseware</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Text+Labs</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.coursera.org/specializations/advanced-embedded-linux-development" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJ7BHtoL1_do_wsiQcbsKuCnHpLp_nq8YldRTMIw9507cpNB3VBLrE-K6fz5P2nMwTSc&usqp=CAU" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Adv. Embedded Linux Dev...</p>
+                                            <p class="c-from">Course from <span>coursera</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Video</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=tK9Oc6AEnR4&pp=ygUPTGludXggc2NyaXB0aW5n" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://i.ytimg.com/vi/tK9Oc6AEnR4/hq720.jpg" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">Linux Bash Scripting</p>
+                                            <p class="c-from">Course from <span>freecodecamp</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Youtube</p>
+                                                <p class="tag">Free</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.freertos.org/static_menu.html" class="c-img-link">
+                                    <div class="contain-c-d">
+                                        <img src="https://hackaday.com/wp-content/uploads/2021/02/free-rtos-featured-1.jpg?w=800" alt="" class="c-img">
+                                        <div class="course-title">
+                                            <p class="c-title">FreeRTOS</p>
+                                            <p class="c-from">Guide from <span>FreeRTOS</span></p>
+                                            <div class="course-tag">
+                                                <p class="tag">Good</p>
+                                                <p class="tag">Youtube</p>
                                                 <p class="tag">Free</p>
                                             </div>
                                         </div>
@@ -1150,45 +1958,25 @@
                             <p class="c-projects">Projects:</p>
                             <div class="cource-project">
                                 <div class="project project1">
-                                    <p class="p-title">Rectifier and Basic Circuit (simulations)</p>
-                                    <a href="https://www.youtube.com/playlist?list=PLho7ncbqgQbsYgH1NiSkzejJDg4eJA0_F" class="p-link">Multisim 30+ tutorial and projects</a>
-                                    <a href="https://www.elprocus.com/bridge-rectifier-circuit-theory-with-working-operation/" class="p-link">Bridge Rectifier</a>
-                                    <a href="https://www.multisim.com/discover/" class="p-link">Multisim Ciruit resourses</a>
-                                    <a href="https://www.youtube.com/results?search_query=simple+diode+and+transistor+projects" class="p-link">Simple diode and transistor projects</a>
+                                    <p class="p-title">Linux Challenges</p>
+                                    <a href="https://overthewire.org/wargames/bandit/bandit0.html" class="p-link">Bandit Challenges</a>
+                                    <a href="https://www.hackerrank.com/domains/shell" class="p-link">Linux Challenges from Hackerrank</a>
+                                    <a href="https://tryhackme.com/module/linux-fundamentals" class="p-link">TryHackMe</a>
+                                    <div class="p-tags">
+                                        <p class="p-tag">Basic Plus</p>
+                                        <p class="p-tag">Youtube</p>
+                                    </div>
+                                </div>
+                                <div class="project project1">
+                                    <p class="p-title">Embedded OS Project</p>
+                                    <a href="https://www.youtube.com/watch?v=pCnqCfTJxFg" class="p-link">ML+Arduino+Mbed OS</a>
+                                    <a href="https://www.youtube.com/watch?v=9SGyU_4KV6c&list=PLKjl7IFAwc4R4Fk8_dcLEXv3-5iMDLCbd" class="p-link">More TinyML Projects</a>
+                                    <a href="https://www.youtube.com/watch?v=l1ujHfWoiOU&pp=ygUUZW1iZWRkZWQgT1MgUHJvamVjdHM%3D" class="p-link">Writing an Embedded OS in RUST</a>
+                                    <a href="https://www.youtube.com/watch?v=5ZDloUBy1Ug" class="p-link">FreeRTOS Project</a>
+                                    <a href="https://arm-software.github.io/CMSIS-FreeRTOS/main/examples.html" class="p-link">Example Project FREE RTOS</a>
                                     <div class="p-tags">
                                         <p class="p-tag">Basic Plus</p>
                                         <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Multivibrator</p>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/monostable.html" class="p-link">Monostable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/bistable.html" class="p-link">Bistable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/waveforms/astable.html" class="p-link">Astable Multivibrator</a>
-                                    <a href="https://www.electronics-tutorials.ws/category/waveforms" class="p-link">Other Waveform generator</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Basic Plus</p>
-                                        <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Counter and Timer Projects</p>
-                                    <a href="https://www.electronics-tutorials.ws/counter/7-segment-display.html" class="p-link">7 Segment 0-9 Counter</a>
-                                    <a href="https://www.electronicsforu.com/electronics-projects/555-timer-circuits" class="p-link">555Timer Projects</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Intermediate+</p>
-                                        <p class="p-tag">Text</p>
-                                    </div>
-                                </div>
-                                <div class="project project1">
-                                    <p class="p-title">Op-Amps and Oscillators</p>
-                                    <a href="https://www.electronicshub.org/cell-phone-detector-circuit/" class="p-link">Simple phone signal detector using BC547 as Amplifier</a>
-                                    <a href="https://www.youtube.com/watch?v=eYVOdlK15Og" class="p-link">Oscillators || RC, LC, Crystal</a>
-                                    <a href="https://www.youtube.com/watch?v=oy_cJ-LffEM&t=16s" class="p-link">Wein bridge Oscillator</a>
-                                    <a href=https://youtu.be/4ObzEft2R_g" class="p-link">Audio Amplifier</a>
-                                    <div class="p-tags">
-                                        <p class="p-tag">Intermediate+</p>
-                                        <p class="p-tag">Text and video</p>
                                     </div>
                                 </div>
                             </div>
@@ -1196,60 +1984,59 @@
                             <div class="other-topic-container">
                                 <div class="otherInTop other1">
                                     <p class="otherTtitle">Interview Questions</p>
-                                    <a href="https://www.wisdomjobs.com/e-university/electronics-interview-questions.html" class="otherLink">Electronics Interview Preparation</a>
-                                    <a href="https://www.sanfoundry.com/1000-electronic-devices-circuits-questions-answers/" class="otherLink">Electronics MCQ Questions</a>
-                                    <a href="https://www.indiabix.com/electronics/questions-and-answers/" class="otherLink">Electronics interview MCQ Questions</a>
+                                    <a href="https://www.interviewbit.com/linux-interview-questions/" class="otherLink">Linux Interview question</a>
+                                    <a href="https://www.interviewbit.com/linux-mcq/" class="otherLink">Linux MCQ Questions</a>
                                 </div>
                                 <div class="topic-youtube-channel">
                                     <p class="topic-youtube-title">Relevant Youtube Channels</p>
                                     <div class="topic-youtubeContainer">
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@engineeringfacts" class="youtubeChannelName">Engineering Facts</a>
+                                            <img src="https://yt3.googleusercontent.com/6FvACKvNSVCMKscuQS08THlkaURoZsX2hUJIJF2EYE0p-5SYRSuEf3kfwtP3_6OveSgbQvnpJQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ArmSoftwareDevelopers" class="youtubeChannelName">Arm Software Developers</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@greatscottlab" class="youtubeChannelName">GreetScott</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPDSKA48r2XvoEFJIigQI1ud-LruGqmpyd3GcuvOQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@WolfgangsChannel" class="youtubeChannelName">Wolfgang's Channel</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/0KxspGLZrJcOucTxNbootzIHMs1dcehlOjxXox_Ks0nMt9AMzAwLPONsO1wFXrrQ8jtlKjLV4w=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@Stefano91ste" class="youtubeChannelName">Stefano91ste</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOmNNkvMKW8umvQrFnOD_uL5RlXexvRdjX8DLOTZg=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@simplyexplained" class="youtubeChannelName">Simply Explained</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNfLIw8nITDzyPHByU1B8q0Mjs-MTLe3lz9ccfmXA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@elonics" class="youtubeChannelName">elonics</a>
+                                            <img src="https://yt3.googleusercontent.com/z4hA2jFTC38wtaalo1osqYspayzbjuzra715DBIUQTTBCNcD_DYVD_YV-GLSXEodLvioTxke0lk=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@electronfer" class="youtubeChannelName">electronfer</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/OqT7TYAJmvaamYz7FB7cNQV117YtZL2L-ZdeO5zxCUOzgx9HNzteGjKFVYvY8Wx07VezAleSJw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@innovative_ideas" class="youtubeChannelName">Innovation Ideas</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOXGrg5H7na1PKh1MfeXjItsJnaIgIZ5BcyrXm6=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@LowLevelLearning" class="youtubeChannelName">Low Level Learning</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO4NrRhGPlcYoJ4e4n7tZrS0-wJ3mRK0XowZC-h=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EngineeringMindset" class="youtubeChannelName">The Engineering Mindset</a>
+                                            <img src="https://yt3.googleusercontent.com/37vmoOEs3gs5KBpyb2noAm02DS8tP3nNZC5VJGjb0T5l9R5FMT69b75Dmi3q6DJ9vXRdWs2IVX0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ControllersTech" class="youtubeChannelName">ControllersTech</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMbXwHhC1Y7dwve-PlAJfKas9tAZS1VwPwLTib4=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@mjlorton" class="youtubeChannelName">mjlorton</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO1_aTMxySfeMCqUCPHZPmm_Vh8ecdreU_HUhoR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@ProgrammingKnowledge" class="youtubeChannelName">Programming Knowledge</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqN9EBzxayoSk7WMS66T7yDWeMB4yHENyw0lKxrx=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@EEVblog" class="youtubeChannelName">eevblog</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPCK-GVDuzsTuWcg62Imaj9BUEQtlC59jQ7FV5Ul-A=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@digikey" class="youtubeChannelName">Digi-Key</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPY6DIWGXxZlpojP9L8XUAj8WaSwSYk-Uithyl5AA=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SRelectric" class="youtubeChannelName">SR electric</a>
+                                            <img src="https://yt3.googleusercontent.com/kJzDpzrnJ-8LO3GxfhCm9xD78_pLCcQCN6MlUITW2KZiQHwYN-I3UN43geOK4ywLsvrkmlpbxw=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@florianleitner-fischer" class="youtubeChannelName">Prof. Dr. Florian Leitner-Fischer</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqMZ8wiUHyP2JzAGnlmFD6OqGXxGjqFabGFiYhPpMQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@ELECTRONOOBS" class="youtubeChannelName">Electronoobs</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNqyHFLQPKsPm1seD-wm0iOTFdkGq4aNysyPi_O=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@TheLinuxChannel" class="youtubeChannelName">The Linux Channel</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqPsvfwKJnwZKcLwNjKAWrL5I0F9KPj8e25TVpnR=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@SparkMind1" class="youtubeChannelName">Spark Mind</a>
+                                            <img src="https://yt3.googleusercontent.com/3aTiR8-i48HnwXZKBacKe_niYg1zmIH2BFv_OqQotxqu3eurYH64sKF2YITmj41Y1p5iPYdaLQ=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@DistroTube" class="youtubeChannelName">DistroTube</a>
                                         </div>
                                         <div class="youtubechannels">
-                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqNpApWmcNDbhDELJwfqJY_LrGtnIYV14ew5ZvASSE0=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
-                                            <a href="https://www.youtube.com/@sciguy14" class="youtubeChannelName">Jeremy Blum</a>
+                                            <img src="https://yt3.googleusercontent.com/ytc/AGIKgqM9_Fe55a_6wP8fpXXrjIV1IeIYAd_59MBmuTcj=s176-c-k-c0x00ffffff-no-rj" alt="" class="youtubeChannel">
+                                            <a href="https://www.youtube.com/@TheLinuxEXP" class="youtubeChannelName">The Linux Experiment</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1257,8 +2044,8 @@
                         </div>
                 </div>
                 <script>
-                    function topic1exapnd(){
-                        var text=document.getElementById("topic_body");
+                    function topic7exapnd(){
+                        var text=document.getElementById("topic7_body");
                         var btn=document.getElementById("topicarrow");
     
                         if(text.style.display ==="none"){
@@ -1272,22 +2059,61 @@
                     }
                 </script>
             </div>
+            <div class="jobdiscrip">
+                <h3 class="requ-title">Company Requirements</h3>
+                <sup>This is to give you the clarification of what companies expecting (you can refer internet for more)</sup>
+                <button id="requ-c-expand" onclick="jobdisexpand()">Expand</button>
+                <div class="com-req" id="com-req">
+                    <img src="embedded/img/embed-role-1 (1).png" alt="" class="c-req">
+                    <img src="embedded/img/embed-role-1 (2).png" alt="" class="c-req">
+                    <img src="embedded/img/embed-role-1 (3).png" alt="" class="c-req">
+                    <img src="embedded/img/embed-role-1 (4).png" alt="" class="c-req">
+                    <img src="embedded/img/embed-role-1 (5).png" alt="" class="c-req">
+                    <img src="embedded/img/embed-role-1 (6).png" alt="" class="c-req">
+                </div>
+                <script>
+                    function jobdisexpand(){
+                        const btn=document.getElementById("requ-c-expand");
+                        const cont=document.getElementById("com-req");
+                        console.log(cont);
+                        if(cont.style.display==="none"){
+                            cont.style.display="flex";
+                            btn.textContent="Minimize";
+                        }
+                        else{
+                            cont.style.display="none";
+                            btn.textContent="Expand";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="companies-offer"></div>
         </div>
         <!-- Main Right -->
         <div class="main-right">
-        <table class="role-basic-info">
-            <tr>
-                <td>Salary for Fresher</td>
-                <td>Average 4.5LPA (2 to 15LPA)</td>
-            </tr>
-            <tr>
-                <td>Salary for Experience of more than 5 to 10 year</td>
-                <td>Average of 10LPA (5 to 40LPA)</td>
-            </tr>
-            <tr>
-                <td>Months required to learn:</td>
-                <td>12 to 20 Months</td>
-            </tr>
+        <table class="role-basic-info" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td>Salary for Fresher</td>
+                    <td>Average 4.5LPA (2 to 15LPA)</td>
+                </tr>
+                <tr>
+                    <td>Salary for Experience of more than 5 to 10 year</td>
+                    <td>Average of 10LPA (5 to 40LPA)</td>
+                </tr>
+                <tr>
+                    <td>Months required to learn:</td>
+                    <td>12 to 20 Months</td>
+                </tr>
+                <tr>
+                    <td>Glass Door Detailed info.</td>
+                    <td><a href="https://www.glassdoor.co.in/Career/embedded-engineer-career_KO0,17.htm">Embedded Engineering</a></td>
+                </tr>
+                <tr>
+                    <td>Ambition Box info.</td>
+                    <td><a href="https://www.ambitionbox.com/profile/embedded-software-engineer-salary">Embedded Engineering</a></td>
+                </tr>
+            </tbody>
         </table>
         </div>
     </div>
