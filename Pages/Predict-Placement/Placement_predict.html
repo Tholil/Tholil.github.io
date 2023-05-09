@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="E-con_systems/styles.css">
+    <title>Tholil</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3274777737673574" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
+
+    <style>
+        .main-head-contain{
+            background:linear-gradient(rgba(150, 214, 252, 0.8),rgba(255, 236, 236, 0.9)),url("https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/24792.jpg?mtime=1568747683");
+            height:300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-heading{
+            text-align: center;
+            font-size: 28px;
+            color:rgb(70, 109, 176);
+            margin-bottom:20px;
+        }
+        .main-head-contain p{
+            text-align: center;
+            font-size: 12px;
+            color:rgb(24, 44, 80);
+            margin-bottom:20px;
+            max-width:600px;
+            padding:20px;
+            background-color:rgba(255, 255, 255, 0.5);
+        }
+        label{
+            font-size:14px;
+            color:rgb(15, 81, 135);
+            display:block;
+            margin-right:10px;
+        }
+        input,select{
+            border-radius:30px;
+            border:3px solid rgb(245, 155, 128);
+            padding:2px 10px;
+            display: block;
+            width:200px;
+        }
+        .form{
+            width: max-content;
+            background: linear-gradient(rgba(255, 255, 255, 0.998),rgba(255, 255, 255, 0.9)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLNa3n5cMbf-IcqLpGAqPzwAbY25LQXdlNwNVs6tSlQHhkajGuzL5rt-qiwiaOEHBm4A8&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding:40px;
+            border-radius:20px;
+            margin:auto;
+            margin-top:30px;
+            box-shadow: 2px 2px 10px gray;
+            margin-bottom:20px;
+        }
+        .form-inner-container{
+            display:grid;
+            grid-template-columns: auto auto;
+        }
+        @media screen and (max-width:960px) {
+            .form-inner-container{
+            grid-template-columns: auto ;
+            }
+            .ques:nth-child(even){
+                margin-left: 10px !important;
+            }
+            
+        }
+        @media  screen and (max-width:550px) {
+            .ques{
+                flex-direction: column;
+            }
+            .percentage-pred{
+                font-size:24px !important;
+            }
+            #answer p{
+                padding:20px !important;
+            }
+        }
+        .ques{
+            display:flex;
+            justify-content: space-between;
+            margin:10px;
+        }
+        .ques:nth-child(even){
+            margin-left:50px;
+        }
+        #btn{
+            display:block;
+            width:max-content;
+            margin: 10px auto;
+            padding:6px 60px;
+            border-radius:40px;
+            border:none;
+            background-color: rgb(70, 109, 176);
+            color:white;
+        }
+        #answer p{
+            text-align: center;
+            padding:80px;
+            margin:20px;
+            box-shadow:1px 1px 5px gray;
+            display:block;
+            margin:30px auto;
+            font-size:14px;
+            background-color:rgb(15, 81, 135);
+            color:white;
+        }
+        .percentage-pred{
+            font-size:30px;
+            display:block;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/index.html" class="logoo" style="text-decoration: none;">
+                    <label>
+                        <p>தொழில்</p>
+                        <p>Tholil</p> 
+                    </label>
+                </a>
+                <button class="nav-toggles">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/Pages/Roles/roles.html">Role Guide</a></li>
+                <li><a href="/Pages/Company/companies.html">Company Guide</a></li>
+                <li><a href="/Pages/Courses/courses.html">Courses</a></li>
+                <li><a href="/Pages/Predict-Placement/Placement_predict.html">ML pred. (Beta)</a></li>
+                <li><a href="/Pages/Blog/blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="../../menu.js"></script>
+    <script src="../../menu.js"></script>
+    <div class="main" id="main">
+        <div class="main-head-contain">
+            <h1 class="main-heading">Placement Prediction</h1> 
+            <p>Note that the placement prediction on this website is based on a statistical model that predicts the probability of getting placed based on marks, exam boards, and work experience. This model has an accuracy of 83%, which means that it can make mistakes. If the prediction shows a low probability, please don't feel discouraged. This model does not take into account your specific skills, which can also be important factors in getting placed. We will try to improve our model and make it more accurate. Thank you for using our website.</p>
+        </div>
+            <div class="form">
+                <div class="form-inner-container">
+                    <div class="ques">
+                        <label for="gender">Gender:</label>
+                        <select name="gender" id="gender">
+                        <option value=1>Male</option>
+                        <option value=0>Female</option>
+                        </select>
+                    </div>
+                
+                    <div class="ques">
+                        <label for="12th-percentage">12th Percentage:</label>
+                        <input type="number" id="12th-percentage" name="12th-percentage" max="100">
+                    </div>
+                    
+                    <div class="ques">
+                        <label for="12th-board">12th Board:</label>
+                        <select name="12th-board" id="12th-board">
+                        <option value=0>CBSE</option>
+                        <option value=1>Other State board</option>
+                        </select>
+                    </div>
+                
+                    <div class="ques">
+                        <label for="10th-percentage">10th Percentage:</label>
+                        <input type="number" id="10th-percentage" name="10th-percentage" max="100">
+                    </div>
+                    
+                    <div class="ques">
+                        <label for="10th-board">12th Board:</label>
+                        <select name="10th-board" id="10th-board">
+                            <option value=0>CBSE</option>
+                            <option value=1>Other State board</option>
+                        </select>
+                    </div>
+    
+                    <div class="ques">
+                        <label for="cgpa">College Percentage (out of 100):</label>
+                        <input type="number" id="cgpa" name="cgpa" max="100" step="0.01">
+                    </div>
+                
+                    <div class="ques">
+                        <label for="work-experience">Work Experience:</label>
+                        <select name="work-experience" id="work-experience">
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                    </div>
+                
+                    <div class="ques">
+                        <label for="preparation">Preparation (out of 100):</label>
+                        <input type="number" id="preparation" name="preparation" max="100">
+                    </div>
+                </div>
+                
+            
+                <button id="btn" onclick="predictplacement()">Predict</button>
+            </div>
+            <div id="answer"></div>
+
+          <script>
+            let value;
+            function predictplacement(){
+                let gender = Number(document.getElementById("gender").value);
+                let p12 = Number(document.getElementById("12th-percentage").value);
+                let b12 = Number(document.getElementById("12th-board").value);
+                let p10 = Number(document.getElementById("10th-percentage").value);
+                let b10 = Number(document.getElementById("10th-board").value);
+                let cgpa = Number(document.getElementById("cgpa").value);
+                let we = Number(document.getElementById("work-experience").value);
+                let prem = Number(document.getElementById("preparation").value);
+                value=[[gender,p10, b10, p12, b12, cgpa, we,prem]];
+                console.log(value);
+                start();
+            }
+            async function loadModel() {
+                const model = await tf.loadLayersModel('tfjs_model/model.json');
+                console.log('Model loaded');
+                return model;
+            }
+
+            // Run the model on new data
+            async function runModel(model) {
+                const input = tf.tensor2d(value);
+                const output = model.predict(input);
+                const prediction = output.dataSync()[0];
+                console.log(`Prediction: ${prediction}`);
+                const text=document.getElementById("answer");
+                text.innerHTML=`<p>Model Predicts that you are <br><span class="percentage-pred"> ${prediction}% <br></span> to get placed in the Company</p>`;
+                text.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            }
+
+            // Call the functions to load and run the model
+            async function start() {
+                const model = await loadModel();
+                await runModel(model);
+            }
+          </script>
+          
+    </div>
+</body>
+</html>

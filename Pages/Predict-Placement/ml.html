@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example TensorFlow.js Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
+    <script>
+      // Load the model from the hosted files
+      async function loadModel() {
+        const model = await tf.loadLayersModel('tfjs_model/model.json');
+        console.log('Model loaded');
+        return model;
+      }
+
+      // Run the model on new data
+      async function runModel(model) {
+        const input = tf.tensor2d([[1,87,0,78,1,77,1,86]]);
+        const output = model.predict(input);
+        const prediction = output.dataSync()[0];
+        console.log(`Prediction: ${prediction}`);
+      }
+
+      // Call the functions to load and run the model
+      async function start() {
+        const model = await loadModel();
+        await runModel(model);
+      }
+
+      // Start the script
+      start();
+    </script>
+  </head>
+  <body>
+    <h1>Example TensorFlow.js Model</h1>
+  </body>
+</html>
